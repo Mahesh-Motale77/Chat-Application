@@ -7,16 +7,16 @@ dotenv.config({});
 
 const app = express();
 
-//middleware
+// const PORT = process.env.PORT || 5000;
+const PORT = 8080;
 
+//middleware
 app.use(express.json());
 
 //routes
 app.use("/api/v4/user",userRoute);
 // http://localhost:5000/api/v4/user/register
 
-// const PORT = process.env.PORT || 5000;
-const PORT = 5000;
 
 app.listen(PORT, ()=>{
     connectDB();

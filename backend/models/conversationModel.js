@@ -9,6 +9,6 @@ const conversationModel = new mongoose.model({
         type:mongoose.Schema.Types.ObjectId,
         ref:"message",
     }]
-},{timestamp:true});
+},{timestamps:true});
 
 export const Conversation = mongoose.model("Conversation", "conversationModel");
