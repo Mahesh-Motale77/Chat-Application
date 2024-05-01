@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
-const conversationModel = new mongoose.model({
-    participants : [{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
+const conversationSchema = new mongoose.Schema({
+    participants: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
     }],
-    messages:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"message",
+    messages: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Message", 
     }]
-},{timestamps:true});
+}, { timestamps: true });
 
-export const Conversation = mongoose.model("Conversation", "conversationModel");
+export const Conversation = mongoose.model("Conversation", conversationSchema);
