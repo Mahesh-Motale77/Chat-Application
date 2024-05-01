@@ -1,4 +1,4 @@
-import e from "express";
+import express from "express";
 import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -84,6 +84,16 @@ export const logout = async(req, res) => {
         return res.status(200).cookie("token", "", {maxAge:0}).json({
            message:"logged out successfully."
         }); 
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getOtherUsers = async(req,res) =>{
+    try {
+        const loggedInUserId = req.id;
+        const otherUsers = await User.find({_id:{$ne:loggedInUserId}}).select("-password");
+        return res.status(200).json(otherUsers);
     } catch (error) {
         console.log(error);
     }
