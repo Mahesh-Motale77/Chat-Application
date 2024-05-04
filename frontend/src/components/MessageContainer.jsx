@@ -11,7 +11,7 @@ const MessageContainer = () => {
             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt='user-profile' />
           </div>
         </div>
-        <div>
+        <div className='text-xl px-2'>
           Alena Desuza
         </div>
       </div>

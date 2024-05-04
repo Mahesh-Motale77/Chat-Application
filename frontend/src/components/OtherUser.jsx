@@ -2,8 +2,9 @@ import React from 'react'
 
 const OtherUser = () => {
     return (
+        // hover:bg-neutral-700
         <div>
-            <div className='flex items-center gap-2 cursor-pointer p-3 rounded hover:bg-neutral-700'>
+            <div className='flex items-center gap-2 cursor-pointer p-3 rounded hover:bg-slate-700'>
                 <div className="avatar online">
                     <div className="w-12 rounded-full">
                         <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt='user-profile' />

@@ -10,7 +10,7 @@ const SideBar = () => {
                     <input
                         type="text"
                         placeholder="Search here"
-                        className="input input-bordered input-primary w-full max-w-xs" />
+                        className="input input-bordered input-primary w-full max-w-xs text-md" />
                     <button className="btn btn-outline btn-primary">
                         <ImSearch />
                     </button>
