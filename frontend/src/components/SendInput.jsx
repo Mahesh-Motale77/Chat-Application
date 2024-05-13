@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { IoSendOutline } from "react-icons/io5";
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
+import { setMessages } from '../redux/messageSlice';
 
 const SendInput = () => {
     const [message, setMessage] = useState("");
     const {selectedUser} = useSelector(store => store.user);
+    const {messages} = useSelector(store => store.message);
+    const dispatch = useDispatch();
     const onSubmitHandler = async(e) => {
         e.preventDefault();
         try {
@@ -16,10 +19,11 @@ const SendInput = () => {
                 withCredentials:true
             });
             console.log(res);
+            dispatch(setMessages([...messages, res?.data?.newMessage]));
         } catch (error) {
             console.log(error);
         }
-
+        setMessage("");
     }
     return (
         <div>
