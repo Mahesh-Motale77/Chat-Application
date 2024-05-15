@@ -29,8 +29,8 @@ const MessageContainer = () => {
           <Messages />
           <SendInput />
         </div>) : (
-          <div className='md:min-w-[550px] flex-col flex items-center gap-2 justify-center items-center'>
-            <h1 className='text-4xl text-white font-bold'>Hey, Welcome {authUser.fullName}</h1> 
+          <div className='md:min-w-[550px] flex-col flex gap-2 justify-center items-center'>
+            <h1 className='text-4xl text-white font-bold'>Hey, Welcome {authUser?.fullName}</h1> 
             <h2 className='text-2xl text-white '>Let's Start Conversation !!!</h2>
 
           </div>
